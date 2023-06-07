@@ -38,7 +38,6 @@ public class RegistrationTest {
         $(".button").click();
         $("[data-test-id=error-notification] .notification__content").shouldHave(Condition.text("Неверно указан логин или пароль"));
     }
-
     @Test
     @DisplayName("Should get error message if login with blocked registered user")
     void shouldGetErrorIfBlockedUser() {
