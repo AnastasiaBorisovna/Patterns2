@@ -7,7 +7,6 @@ branches:
     - main
 
 build: off
-
 install:
 
   - java -jar ./artifacts/app-ibank.jar -P:profile=test &
