@@ -28,7 +28,6 @@ public class RegistrationTest {
         $(".button").click();
         $(withText("Личный кабинет")).shouldBe(Condition.visible);
     }
-
     @Test
     @DisplayName("Should get error message if login with not registered user") //если юзера нет (логина нет)
     void shouldGetErrorIfNotRegisteredUser() {
