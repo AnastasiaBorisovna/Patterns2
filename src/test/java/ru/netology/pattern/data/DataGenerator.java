@@ -14,8 +14,6 @@ import java.util.Locale;
 
 import static io.restassured.RestAssured.given;
 
-@Data
-@AllArgsConstructor
 public class DataGenerator {
     private static final RequestSpecification requestSpec = new RequestSpecBuilder()
             .setBaseUri("http://localhost")
@@ -27,13 +25,13 @@ public class DataGenerator {
     public static Faker faker = new Faker(new Locale("en"));
 
     private static void sendRequest(RegistrationDto user) {
-            given()
-                    .spec(requestSpec)
-                    .body(new Gson().toJson(user))
-                    .when()
-                    .post("/api/system/users")
-                    .then()
-                    .statusCode(200);
+        given()
+                .spec(requestSpec)
+                .body(new Gson().toJson(user))
+                .when()
+                .post("/api/system/users")
+                .then()
+                .statusCode(200);
     }
 
     public static String getRandomLogin() {
